@@ -5,7 +5,7 @@ import axios from "axios";
 export const fetchUsers = createAsyncThunk(
   "users/fetchUsers",
   async ({ page, searchTerm, domains, genders, availability }) => {
-    const response = await axios.get("http://localhost:3000/api/users", {
+    const response = await axios.get("https://user-management-heliverse-server.onrender.com/api/users", {
       params: {
         page,
         search: searchTerm,

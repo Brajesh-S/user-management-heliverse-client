@@ -6,7 +6,7 @@ export const createTeam = createAsyncThunk(
   "team/createTeam",
   async ({ name, userIds }, { rejectWithValue }) => {
     try {
-      const response = await axios.post("http://localhost:3000/api/team", {
+      const response = await axios.post("https://user-management-heliverse-server.onrender.com/api/team", {
         name,
         userIds,
       });
@@ -19,13 +19,13 @@ export const createTeam = createAsyncThunk(
 
 // Fetch all teams
 export const fetchTeams = createAsyncThunk("team/fetchTeams", async () => {
-  const response = await axios.get("http://localhost:3000/api/team");
+  const response = await axios.get("https://user-management-heliverse-server.onrender.com/api/team");
   return response.data;
 });
 
 // Fetch a specific team by ID
 export const fetchTeam = createAsyncThunk("team/fetchTeam", async (teamId) => {
-  const response = await axios.get(`http://localhost:3000/api/team/${teamId}`);
+  const response = await axios.get(`https://user-management-heliverse-server.onrender.com/api/team/${teamId}`);
   return response.data;
 });
 
